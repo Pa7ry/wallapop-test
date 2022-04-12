@@ -1,0 +1,21 @@
+<mat-card class="showcase-item__margin">
+  <mat-card-header>
+    <mat-card-title>{{ item?.title }}</mat-card-title>
+    <mat-card-subtitle>{{ item?.price }}€</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]="item?.image" [alt]="item?.title" />
+  <mat-card-content>
+    <p>{{ item?.description }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-icon-button color="warn" aria-label="Like item">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <a mat-button color="primary" [href]="'mailto:' + item?.email" aria-label="Mail to seller">
+      <mat-icon>contact_mail</mat-icon>
+      {{ item?.email }}
+    </a>
+  </mat-card-actions>
+</mat-card>

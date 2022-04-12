@@ -1,10 +1,13 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ShowcaseComponent } from './core/page/showcase/showcase.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, ShowcaseComponent],
+      imports: [HttpClientModule],
     }).compileComponents();
   });
 

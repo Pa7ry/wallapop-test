@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [ShowcaseComponent, ShowcaseItemComponent, SearchBarComponent, OrderByComponent],
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatChipsModule,
   ],
   exports: [ShowcaseComponent],
 })

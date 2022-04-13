@@ -8,8 +8,13 @@
   top: 0;
 }
 
+.showcase__order {
+  position: relative;
+  top: 90px;
+}
+
 .showcase__container {
-  margin-top: 90px;
+  margin-top: 135px;
   display: flex;
   flex-direction: column;
 }

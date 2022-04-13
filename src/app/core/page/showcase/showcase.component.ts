@@ -13,6 +13,8 @@ export class ShowcaseComponent implements OnInit {
 
   filteredItems: Item[] = [];
 
+  orderSelected!: ItemFilter;
+
   constructor(private itemsSvc: ItemsService) {}
 
   ngOnInit(): void {
@@ -33,5 +35,19 @@ export class ShowcaseComponent implements OnInit {
         }
       });
     }
+  }
+
+  order(ev: ItemFilter) {
+    if (ev === this.orderSelected) {
+      this.filteredItems.reverse();
+    } else {
+      if (ev === 'price') {
+        this.filteredItems.sort((itemA, itemB) => Number(itemA[ev]) - Number(itemB[ev]));
+      } else {
+        this.filteredItems.sort((itemA, itemB) => itemA[ev].localeCompare(itemB[ev]));
+      }
+    }
+
+    this.orderSelected = ev;
   }
 }

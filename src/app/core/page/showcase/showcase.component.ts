@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemFilter } from '../../models/item-filter.interface';
 import { Item, Items } from '../../models/items.interface';
 import { ItemsService } from '../../service/items/items.service';
 
@@ -21,7 +22,7 @@ export class ShowcaseComponent implements OnInit {
     });
   }
 
-  search(ev: { searchType: 'description' | 'title' | 'price' | 'email'; searchValue: string }) {
+  search(ev: { searchType: ItemFilter; searchValue: string }) {
     if (!ev.searchValue) {
       this.filteredItems = this.itemsList;
     } else {

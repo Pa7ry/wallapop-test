@@ -1,0 +1,21 @@
+.searchbar__container {
+  padding: 15px;
+}
+
+.searchbar__form {
+  display: flex;
+  width: 100%;
+}
+
+.searchbar__search-type {
+  width: 30%;
+}
+
+.searchbar__search-value {
+  width: 60%;
+}
+
+.searchbar__button {
+  width: 10%;
+  margin: 0.25em 0;
+}

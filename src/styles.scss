@@ -8,3 +8,13 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.searchbar__search-value {
+  .mat-form-field-infix {
+    width: auto !important;
+  }
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}

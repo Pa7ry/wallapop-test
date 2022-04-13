@@ -1,0 +1,28 @@
+<div class="searchbar__container">
+  <form class="searchbar__form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="searchbar__search-type" color="primary" appearance="outline">
+      <mat-label>Buscar por</mat-label>
+      <mat-select formControlName="searchType">
+        <mat-option *ngFor="let searchOpt of searchOptions" [value]="searchOpt.value">{{ searchOpt.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="searchbar__search-value" color="primary" appearance="outline">
+      <mat-label>Buscar</mat-label>
+      <input matInput type="search" formControlName="searchValue" />
+      <button
+        *ngIf="searchForm.get('searchValue')?.value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchForm.get('searchValue')?.setValue('')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button class="searchbar__button" mat-raised-button color="primary" type="submit">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+</div>

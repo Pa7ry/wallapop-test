@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ItemFilter } from 'src/app/core/models/item-filter.interface';
-
+import { itemFilters } from 'src/app/shared/utils/item-filter';
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -10,24 +10,7 @@ import { ItemFilter } from 'src/app/core/models/item-filter.interface';
 export class SearchBarComponent {
   @Output() search = new EventEmitter();
 
-  searchOptions: { name: string; value: ItemFilter }[] = [
-    {
-      name: 'Título',
-      value: 'title',
-    },
-    {
-      name: 'Descripción',
-      value: 'description',
-    },
-    {
-      name: 'Precio',
-      value: 'price',
-    },
-    {
-      name: 'Email',
-      value: 'email',
-    },
-  ];
+  searchOptions = itemFilters;
 
   searchForm: FormGroup;
 

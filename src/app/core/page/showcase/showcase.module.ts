@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShowcaseComponent } from './showcase.component';
 import { ShowcaseItemComponent } from './components/showcase-item/showcase-item.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { OrderByComponent } from './components/order-by/order-by.component';
 
 // Material modules
 import { MatCardModule } from '@angular/material/card';
@@ -16,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ShowcaseComponent, ShowcaseItemComponent, SearchBarComponent],
+  declarations: [ShowcaseComponent, ShowcaseItemComponent, SearchBarComponent, OrderByComponent],
   imports: [
     CommonModule,
     MatCardModule,

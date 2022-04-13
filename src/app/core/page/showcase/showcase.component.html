@@ -1,3 +1,9 @@
-<ng-container *ngFor="let item of itemsList">
-  <app-showcase-item *ngIf="item" [item]="item"></app-showcase-item>
-</ng-container>
+<app-search-bar class="showcase__searchbar" (search)="search($event)"></app-search-bar>
+
+<div class="showcase__container" *ngIf="filteredItems.length > 0; else noResults">
+  <app-showcase-item class="showcase__item" *ngFor="let item of filteredItems" [item]="item"></app-showcase-item>
+</div>
+
+<ng-template #noResults>
+  <h3>Lo sentimos, no hemos encontrado lo que buscas.</h3>
+</ng-template>

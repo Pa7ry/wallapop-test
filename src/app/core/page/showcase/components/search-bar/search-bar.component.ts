@@ -7,7 +7,7 @@ import { ItemFilter } from 'src/app/core/models/item-filter.interface';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss'],
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
   @Output() search = new EventEmitter();
 
   searchOptions: { name: string; value: ItemFilter }[] = [

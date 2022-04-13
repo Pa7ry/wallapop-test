@@ -1,0 +1,27 @@
+.showcase__searchbar {
+  position: fixed;
+  z-index: 999;
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  top: 0;
+}
+
+.showcase__container {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .showcase__container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .showcase__item {
+    width: 350px;
+  }
+}

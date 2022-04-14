@@ -10,7 +10,7 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-icon-button color="warn" aria-label="Like item">
+    <button mat-icon-button color="warn" aria-label="Like item" (click)="setFav(item)">
       <mat-icon>favorite</mat-icon>
     </button>
     <a mat-button color="primary" [href]="'mailto:' + item?.email" aria-label="Mail to seller">

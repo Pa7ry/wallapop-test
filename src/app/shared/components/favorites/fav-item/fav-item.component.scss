@@ -21,3 +21,9 @@
 .favItem__delete-btn {
   align-self: flex-end;
 }
+
+@media (min-width: 700px) {
+  .favItem__container {
+    width: 35vw;
+  }
+}

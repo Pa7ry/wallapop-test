@@ -1,0 +1,17 @@
+.favorites__no-favs {
+  text-align: center;
+}
+
+.favorites__container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .favorites__container {
+    flex-direction: row;
+  }
+}

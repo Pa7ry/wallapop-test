@@ -13,6 +13,8 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {}
 
   showFavorites() {
-    this.dialog.open(FavoritesComponent);
+    this.dialog.open(FavoritesComponent, {
+      width: '80vw',
+    });
   }
 }

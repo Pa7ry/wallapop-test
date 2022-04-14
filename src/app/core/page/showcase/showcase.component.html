@@ -3,7 +3,12 @@
 <app-order-by class="showcase__order" (order)="order($event)"></app-order-by>
 
 <div class="showcase__container" *ngIf="filteredItems.length > 0; else noResults">
-  <app-showcase-item class="showcase__item" *ngFor="let item of filteredItems" [item]="item"></app-showcase-item>
+  <app-showcase-item
+    class="showcase__item"
+    *ngFor="let item of filteredItems"
+    [item]="item"
+    (addFav)="addFav($event)"
+  ></app-showcase-item>
 </div>
 
 <ng-template #noResults>

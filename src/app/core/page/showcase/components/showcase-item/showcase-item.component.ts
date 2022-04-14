@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from 'src/app/core/models/items.interface';
 import { FavoriteService } from 'src/app/core/service/favorite/favorite.service';
 
@@ -10,14 +10,9 @@ import { FavoriteService } from 'src/app/core/service/favorite/favorite.service'
 export class ShowcaseItemComponent {
   @Input() item!: Item;
 
-  constructor(private favoriteSvc: FavoriteService) {}
+  @Output() addFav = new EventEmitter();
 
-  setFav(item: Item) {
-    this.favoriteSvc.favoriteItems$.subscribe((favItems: Item[]) => {
-      if (!favItems.includes(item)) {
-        favItems.push(item);
-        this.favoriteSvc.updateFavoriteItems(favItems);
-      }
-    });
+  fav(item: Item) {
+    this.addFav.emit(item);
   }
 }

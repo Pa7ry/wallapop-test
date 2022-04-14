@@ -21,6 +21,7 @@ export class ShowcaseComponent implements OnInit {
     this.itemsSvc.getItems().subscribe((items: Items) => {
       this.itemsList = items.items;
       this.filteredItems = items.items;
+      this.order('title');
     });
   }
 

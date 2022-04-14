@@ -11,7 +11,7 @@ export class ShowcaseItemComponent {
 
   @Output() addFav = new EventEmitter();
 
-  fav(item: Item) {
-    this.addFav.emit(item);
+  fav() {
+    this.addFav.emit(this.item);
   }
 }

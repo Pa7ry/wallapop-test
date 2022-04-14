@@ -11,10 +11,14 @@ body {
 
 .searchbar__search-value {
   .mat-form-field-infix {
-    width: auto !important;
+    width: auto;
   }
 }
 
 .mat-form-field-wrapper {
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
+}
+
+.mat-chip-list-wrapper {
+  justify-content: center;
 }

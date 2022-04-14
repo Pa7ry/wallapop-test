@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemFilter } from '../../models/item-filter.interface';
 import { Item, Items } from '../../models/items.interface';
+import { FavoriteService } from '../../service/favorite/favorite.service';
 import { ItemsService } from '../../service/items/items.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class ShowcaseComponent implements OnInit {
 
   orderSelected!: ItemFilter;
 
-  constructor(private itemsSvc: ItemsService) {}
+  constructor(private itemsSvc: ItemsService, private favoriteSvc: FavoriteService) {}
 
   ngOnInit(): void {
     this.itemsSvc.getItems().subscribe((items: Items) => {
@@ -50,5 +51,16 @@ export class ShowcaseComponent implements OnInit {
     }
 
     this.orderSelected = ev;
+  }
+
+  addFav(item: Item) {
+    this.favoriteSvc.favoriteItems$
+      .subscribe((favItems: Item[]) => {
+        if (!favItems.includes(item)) {
+          favItems.push(item);
+          this.favoriteSvc.updateFavoriteItems(favItems);
+        }
+      })
+      .unsubscribe();
   }
 }

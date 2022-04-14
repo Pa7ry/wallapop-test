@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ItemFilter } from 'src/app/core/models/item-filter.interface';
 import { itemFilters } from 'src/app/shared/utils/item-filter';
@@ -8,6 +8,8 @@ import { itemFilters } from 'src/app/shared/utils/item-filter';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent {
+  @Input() fav: boolean = false;
+
   @Output() search = new EventEmitter();
 
   searchOptions = itemFilters;

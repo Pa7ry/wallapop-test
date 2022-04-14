@@ -1,6 +1,6 @@
 <div class="searchbar__container">
   <form class="searchbar__form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-    <mat-form-field class="searchbar__search-type" color="primary" appearance="outline">
+    <mat-form-field *ngIf="!fav" class="searchbar__search-type" color="primary" appearance="outline">
       <mat-label>Buscar por</mat-label>
       <mat-select formControlName="searchType">
         <mat-option *ngFor="let searchOpt of searchOptions" [value]="searchOpt.value">{{ searchOpt.name }}</mat-option>

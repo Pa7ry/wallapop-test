@@ -1,15 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from 'src/app/core/models/items.interface';
+import { FavoriteService } from 'src/app/core/service/favorite/favorite.service';
 
 @Component({
   selector: 'app-showcase-item',
   templateUrl: './showcase-item.component.html',
   styleUrls: ['./showcase-item.component.scss'],
 })
-export class ShowcaseItemComponent implements OnInit {
+export class ShowcaseItemComponent {
   @Input() item!: Item;
 
-  constructor() {}
+  @Output() addFav = new EventEmitter();
 
-  ngOnInit(): void {}
+  fav(item: Item) {
+    this.addFav.emit(item);
+  }
 }

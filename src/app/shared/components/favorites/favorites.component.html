@@ -1,0 +1,10 @@
+<app-search-bar *ngIf="filteredFavs.length > 0" [fav]="true" (search)="search($event)"></app-search-bar>
+
+<div class="favorites__container" *ngIf="filteredFavs.length > 0; else noFavs">
+  <app-fav-item *ngFor="let item of filteredFavs; let i = index" [item]="item" (deleteFav)="deleteFav(i)">
+  </app-fav-item>
+</div>
+
+<ng-template #noFavs>
+  <h3 class="favorites__no-favs">Aún no tienes favoritos.</h3>
+</ng-template>

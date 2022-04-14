@@ -1,0 +1,29 @@
+.favItem__container {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.favItem__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.favItem__title {
+  margin-left: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 140px;
+  white-space: nowrap;
+}
+
+.favItem__delete-btn {
+  align-self: flex-end;
+}
+
+@media (min-width: 700px) {
+  .favItem__container {
+    width: 35vw;
+  }
+}

@@ -16,10 +16,8 @@ export class OrderByComponent {
 
   selectedItem: number = 0;
 
-  constructor() {}
-
   select(orderSelected: ItemFilter, index: number) {
-    this.selectedItem === index ? (this.asc = !this.asc) : (this.asc = true);
+    this.asc = this.selectedItem === index ? !this.asc : (this.asc = true);
     this.selectedItem = index;
     this.order.emit(orderSelected);
   }

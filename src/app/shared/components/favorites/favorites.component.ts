@@ -37,7 +37,7 @@ export class FavoritesComponent implements OnInit {
     } else {
       this.filteredFavs = [];
       this.favItems.forEach((item: Item) => {
-        if (item['title'].toLowerCase().includes(ev.searchValue.toLowerCase())) {
+        if (item.title.toLowerCase().includes(ev.searchValue.toLowerCase())) {
           this.filteredFavs.push(item);
         }
       });

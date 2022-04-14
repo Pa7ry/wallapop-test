@@ -1,9 +1,6 @@
-<div>
-  <mat-chip-list #chipList aria-label="Order by">
-    <mat-chip *ngFor="let filter of itemFilters" (click)="select(filter.value)">
-      {{ filter.name }}
-      <mat-icon>arrow_upward</mat-icon>
-      <mat-icon>arrow_downward</mat-icon>
-    </mat-chip>
-  </mat-chip-list>
-</div>
+<mat-chip-list #chipList aria-label="Order by">
+  <mat-chip color="accent" selected *ngFor="let filter of itemFilters; let i = index" (click)="select(filter.value, i)">
+    {{ filter.name }}
+    <mat-icon *ngIf="i === selectedItem">{{ asc ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+  </mat-chip>
+</mat-chip-list>

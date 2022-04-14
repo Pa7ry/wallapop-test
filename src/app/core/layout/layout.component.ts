@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FavoritesComponent } from 'src/app/shared/components/favorites/favorites.component';
 
@@ -7,10 +7,8 @@ import { FavoritesComponent } from 'src/app/shared/components/favorites/favorite
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
   constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {}
 
   showFavorites() {
     this.dialog.open(FavoritesComponent, {

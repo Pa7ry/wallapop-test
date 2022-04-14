@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from 'src/app/core/models/items.interface';
-import { FavoriteService } from 'src/app/core/service/favorite/favorite.service';
 
 @Component({
   selector: 'app-showcase-item',

@@ -9,11 +9,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { FavItemComponent } from './fav-item/fav-item.component';
-import { FavSearchbarComponent } from './fav-searchbar/fav-searchbar.component';
+import { MatInputModule } from '@angular/material/input';
+import { SearchBarModule } from '../search-bar/search-bar.module';
 
 @NgModule({
-  declarations: [FavoritesComponent, FavItemComponent, FavSearchbarComponent],
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule],
+  declarations: [FavoritesComponent, FavItemComponent],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, SearchBarModule],
   exports: [FavoritesComponent],
 })
 export class FavoritesModule {}

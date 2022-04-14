@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { SearchBarModule } from 'src/app/shared/components/search-bar/search-bar.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [ShowcaseComponent, ShowcaseItemComponent, OrderByComponent],
@@ -24,6 +25,7 @@ import { SearchBarModule } from 'src/app/shared/components/search-bar/search-bar
     HttpClientModule,
     MatChipsModule,
     SearchBarModule,
+    MatPaginatorModule,
   ],
   exports: [ShowcaseComponent],
 })

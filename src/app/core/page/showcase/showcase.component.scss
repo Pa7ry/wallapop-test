@@ -8,15 +8,26 @@
   top: 56px;
 }
 
-.showcase__order {
-  position: relative;
-  top: 154px;
-}
-
 .showcase__container {
-  margin-top: 199px;
+  margin-top: 160px;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+.showcase__settings {
+  width: 100%;
+}
+
+.showcase__paginator {
+  width: 100%;
+}
+
+.showcase__scroll-btn {
+  position: sticky;
+  bottom: 13%;
+  left: 83%;
+  z-index: 999;
 }
 
 @media (min-width: 700px) {
@@ -32,5 +43,9 @@
 
   .showcase__item {
     width: 350px;
+  }
+
+  .showcase__scroll-btn {
+    display: none;
   }
 }

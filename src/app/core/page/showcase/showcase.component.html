@@ -1,14 +1,31 @@
 <app-search-bar class="showcase__searchbar" (search)="search($event)"></app-search-bar>
 
-<app-order-by class="showcase__order" (order)="order($event)"></app-order-by>
-
 <div class="showcase__container" *ngIf="filteredItems.length > 0; else noResults">
+  <div class="showcase__settings">
+    <app-order-by class="showcase__order" (order)="order($event)"></app-order-by>
+  </div>
+
   <app-showcase-item
     class="showcase__item"
     *ngFor="let item of filteredItems"
     [item]="item"
     (addFav)="addFav($event)"
   ></app-showcase-item>
+
+  <mat-paginator
+    class="showcase__paginator"
+    #paginator
+    (page)="handlePageEvent($event)"
+    [length]="listLength"
+    pageSize="5"
+    [hidePageSize]="true"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+
+  <button class="showcase__scroll-btn" color="primary" mat-mini-fab aria-label="Scroll to top" (click)="scrollTop()">
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
 </div>
 
 <ng-template #noResults>

@@ -1,1 +1,7 @@
-<p>favorites works!</p>
+<div *ngIf="favItems.length > 0; else noResults">
+  <app-fav-item *ngFor="let item of favItems; let i = index" [item]="item" (deleteFav)="deleteFav(i)"> </app-fav-item>
+</div>
+
+<ng-template #noResults>
+  <h3>Aún no tienes favoritos.</h3>
+</ng-template>

@@ -1,0 +1,10 @@
+<mat-card class="favItem__container">
+  <img mat-card-md-image [src]="item?.image" [alt]="item?.title" />
+
+  <div class="favItem__header">
+    <mat-card-title class="favItem__title">{{ item?.title }}</mat-card-title>
+    <button class="favItem__delete-btn" mat-icon-button color="warn" aria-label="Delete item" (click)="supr()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</mat-card>

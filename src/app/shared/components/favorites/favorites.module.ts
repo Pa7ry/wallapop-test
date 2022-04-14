@@ -8,9 +8,10 @@ import { FavoritesComponent } from './favorites.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { FavItemComponent } from './fav-item/fav-item.component';
 
 @NgModule({
-  declarations: [FavoritesComponent],
+  declarations: [FavoritesComponent, FavItemComponent],
   imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule],
   exports: [FavoritesComponent],
 })

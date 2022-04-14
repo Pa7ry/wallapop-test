@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { Item } from 'src/app/core/models/items.interface';
 import { FavoriteService } from 'src/app/core/service/favorite/favorite.service';
 
@@ -13,8 +14,10 @@ export class FavoritesComponent implements OnInit {
   constructor(private favoriteSvc: FavoriteService) {}
 
   ngOnInit(): void {
-    this.favoriteSvc.favoriteItems$.subscribe((favItems: Item[]) => (this.favItems = favItems));
-    console.log(this.favItems);
+    this.favoriteSvc.favoriteItems$
+      .pipe(take(1))
+      .subscribe((favItems: Item[]) => (this.favItems = favItems))
+      .unsubscribe();
   }
 
   deleteFav(itemIndex: number) {

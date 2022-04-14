@@ -12,12 +12,12 @@ export class OrderByComponent {
 
   itemFilters = itemFilters;
 
-  asc = true;
+  upward = true;
 
   selectedItem: number = 0;
 
   select(orderSelected: ItemFilter, index: number) {
-    this.asc = this.selectedItem === index ? !this.asc : (this.asc = true);
+    this.upward = this.selectedItem === index ? !this.upward : (this.upward = true);
     this.selectedItem = index;
     this.order.emit(orderSelected);
   }

@@ -5,21 +5,25 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  top: 0;
+  top: 56px;
 }
 
 .showcase__order {
   position: relative;
-  top: 90px;
+  top: 154px;
 }
 
 .showcase__container {
-  margin-top: 135px;
+  margin-top: 199px;
   display: flex;
   flex-direction: column;
 }
 
 @media (min-width: 700px) {
+  .showcase__searchbar {
+    top: 64px;
+  }
+
   .showcase__container {
     flex-direction: row;
     flex-wrap: wrap;

@@ -13,19 +13,19 @@ import { ItemsService } from '../../service/items/items.service';
 export class ShowcaseComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  itemsList: Item[] = [];
+  private itemsList: Item[] = [];
+
+  private orderSelected!: ItemFilter;
+
+  private startItem: number = 0;
+
+  private endItem: number = 5;
+
+  private isFiltered: boolean = false;
 
   filteredItems: Item[] = [];
 
-  orderSelected!: ItemFilter;
-
   listLength!: number;
-
-  startItem: number = 0;
-
-  endItem: number = 5;
-
-  isFiltered: boolean = false;
 
   constructor(private itemsSvc: ItemsService, private favoriteSvc: FavoriteService) {}
 
@@ -43,7 +43,6 @@ export class ShowcaseComponent implements OnInit {
    * @param ev - { searchType: ItemFilter; searchValue: string }
    */
   search(ev: { searchType: ItemFilter; searchValue: string }): void {
-    this.paginator.firstPage();
     this.isFiltered = !!ev.searchValue;
     if (!ev.searchValue) {
       this.filteredItems = this.itemsList;
@@ -53,10 +52,11 @@ export class ShowcaseComponent implements OnInit {
       this.itemsList.forEach((item: Item) => {
         if (item[ev.searchType].toLowerCase().includes(ev.searchValue.toLowerCase())) {
           this.filteredItems.push(item);
-          this.listLength = this.filteredItems.length;
         }
       });
+      this.listLength = this.filteredItems.length;
     }
+    this.firstPage();
   }
 
   /**
@@ -66,7 +66,7 @@ export class ShowcaseComponent implements OnInit {
    * @param itemArray { Item[] }
    * @returns Item[]
    */
-  orderItems(ev: ItemFilter, itemArray: Item[] = this.itemsList): Item[] {
+  private orderItems(ev: ItemFilter, itemArray: Item[] = this.itemsList): Item[] {
     if (ev === this.orderSelected) {
       return itemArray.reverse();
     } else {
@@ -85,7 +85,7 @@ export class ShowcaseComponent implements OnInit {
   order(ev: ItemFilter): void {
     this.filteredItems = this.isFiltered ? this.orderItems(ev, this.filteredItems) : this.orderItems(ev);
     this.orderSelected = ev;
-    this.paginator.firstPage();
+    this.firstPage();
   }
 
   /**
@@ -129,5 +129,13 @@ export class ShowcaseComponent implements OnInit {
    */
   scrollTop() {
     window.scroll(0, 0);
+  }
+
+  private firstPage() {
+    if (this.paginator.hasPreviousPage()) {
+      this.paginator.firstPage();
+    } else {
+      this.filteredItems = this.filteredItems.slice(0, 5);
+    }
   }
 }

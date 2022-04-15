@@ -9,10 +9,9 @@
 }
 
 .showcase__container {
-  margin-top: 160px;
+  padding-top: 160px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 .showcase__settings {
@@ -28,6 +27,10 @@
   bottom: 13%;
   left: 83%;
   z-index: 999;
+}
+
+.showcase__no-results {
+  padding: 20px 10px;
 }
 
 @media (min-width: 700px) {

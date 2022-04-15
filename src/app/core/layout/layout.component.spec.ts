@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { FavoritesComponent } from 'src/app/shared/components/favorites/favorites.component';
@@ -13,6 +14,7 @@ describe('LayoutComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [LayoutComponent],
       imports: [MatDialogModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -91,6 +91,7 @@ describe('ShowcaseComponent', () => {
         MatIconModule,
         BrowserAnimationsModule,
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [ItemsService, FavoriteService],
     }).compileComponents();
   });

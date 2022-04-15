@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,6 +13,7 @@ describe('OrderByComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [OrderByComponent],
       imports: [MatChipsModule, MatIconModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

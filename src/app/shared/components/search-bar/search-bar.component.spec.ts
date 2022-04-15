@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -14,6 +15,7 @@ describe('SearchBarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [SearchBarComponent],
       imports: [FormsModule, ReactiveFormsModule, MatSelectModule, BrowserAnimationsModule, MatInputModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 
@@ -25,5 +27,11 @@ describe('SearchBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit form values', () => {
+    spyOn(component.search, 'emit');
+    component.onSubmit();
+    expect(component.search.emit).toHaveBeenCalledWith({ searchType: 'title', searchValue: null });
   });
 });

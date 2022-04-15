@@ -1,8 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,7 +9,6 @@ import { SearchBarModule } from 'src/app/shared/components/search-bar/search-bar
 import { ItemsService } from '../../service/items/items.service';
 import { OrderByComponent } from './components/order-by/order-by.component';
 import { ShowcaseItemComponent } from './components/showcase-item/showcase-item.component';
-import { MatPaginatorHarness } from '@angular/material/paginator/testing';
 
 import { ShowcaseComponent } from './showcase.component';
 import { Item } from '../../models/items.interface';
